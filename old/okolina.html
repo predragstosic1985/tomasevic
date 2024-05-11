@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!--
+		predragstosic1985@gmail.com | Predrag Stosic
+-->
+<html>
+  <head>
+    <title>Tomasevic smestaj</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/blueimp-gallery.min.css" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header id="header">
+      <a href="okolina.html" class="title">Smeštaj</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Naslovna</a></li>
+          <!-- <li><a href="okolina.html">Okolina</a></li> -->
+        </ul>
+      </nav>
+    </header>
+    <!-- Main -->
+
+    <div id="blueimp-gallery" class="blueimp-gallery">
+      <div class="slides"></div>
+      <h3 class="title"></h3>
+      <a class="prev">‹</a>
+      <a class="next">›</a>
+      <a class="close">×</a>
+      <a class="play-pause"></a>
+      <ol class="indicator"></ol>
+
+      <div id="links">
+        <a href="img/okolina/poluotok.jpg" title="Tomasevic">
+          <img src="img/okolina/poluotok.jpg" alt="Smestaj" />
+        </a>
+        <a href="img/okolina/20150809_113946.jpg" title="Tomasevic">
+          <img src="img/okolina/20150809_113946.jpg" alt="Smestaj" />
+        </a>
+        <a href="img/okolina/IMG_20170818_183006.jpg" title="Tomasevic">
+          <img src="img/okolina/IMG_20170818_183006.jpg" alt="Smestaj" />
+        </a>
+        <a href="img/okolina/IMG_20170818_191916.jpg" title="Tomasevic">
+          <img src="img/okolina/IMG_20170818_191916.jpg" alt="Smestaj" />
+        </a>
+        <a href="img/okolina/IMG_20170825_224256.jpg" title="Tomasevic">
+          <img src="img/okolina/IMG_20170825_224256.jpg" alt="Smestaj" />
+        </a>
+        <a href="img/okolina/IMG_20180107_141709.jpg" title="Tomasevic">
+          <img src="img/okolina/IMG_20180107_141709.jpg" alt="Smestaj" />
+        </a>
+        <a href="img/okolina/IMG_20180817_141408.jpg" title="Tomasevic">
+          <img src="img/okolina/IMG_20180817_141408.jpg" alt="Smestaj" />
+        </a>
+        <a href="img/okolina/IMG_20180823_134704.jpg" title="Tomasevic">
+          <img src="img/okolina/IMG_20180823_134704.jpg" alt="Smestaj" />
+        </a>
+        <a href="img/okolina/IMG_20180825_234116.jpg" title="Tomasevic">
+          <img src="img/okolina/IMG_20180825_234116.jpg" alt="Smestaj" />
+        </a>
+        <a href="img/okolina/IMG_20180826_162054.jpg" title="Tomasevic">
+          <img src="img/okolina/IMG_20180826_162054.jpg" alt="Smestaj" />
+        </a>
+        <a href="img/okolina/IMG_20180826_162212.jpg" title="Tomasevic">
+          <img src="img/okolina/IMG_20180826_162212.jpg" alt="Smestaj" />
+        </a>
+        <a href="img/okolina/IMG_20180826_163102.jpg" title="Tomasevic">
+          <img src="img/okolina/IMG_20180826_163102.jpg" alt="Smestaj" />
+        </a>
+        <a href="img/okolina/IMG_20180830_155900.jpg" title="Tomasevic">
+          <img src="img/okolina/IMG_20180830_155900.jpg" alt="Smestaj" />
+        </a>
+        <a href="img/okolina/IMG_20180830_160055.jpg" title="Tomasevic">
+          <img src="img/okolina/IMG_20180830_160055.jpg" alt="Smestaj" />
+        </a>
+      </div>
+    </div>
+    <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+      <div class="slides"></div>
+      <h3 class="title"></h3>
+      <a class="prev">‹</a>
+      <a class="next">›</a>
+      <a class="close">×</a>
+      <a class="play-pause"></a>
+      <ol class="indicator"></ol>
+    </div>
+
+    <div
+      id="blueimp-gallery-carousel"
+      class="blueimp-gallery blueimp-gallery-carousel"
+    >
+      <div class="slides"></div>
+      <h3 class="title"></h3>
+      <a class="prev">‹</a>
+      <a class="next">›</a>
+      <a class="play-pause"></a>
+      <ol class="indicator"></ol>
+    </div>
+    <!-- Footer -->
+    <footer id="footer" class="wrapper alt">
+      <div class="inner">
+        <ul class="menu">
+          <li>&copy;Sva prava rezervisana.</li>
+          <li>
+            Dizajn:
+            <a href="mailto:predragstosic1985@gmail.com">Predrag Stosic</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script src="js/blueimp-gallery.min.js"></script>
+    <!-- Gallery -->
+
+    <!-- Gallery -->
+    <script>
+      document.getElementById("links").onclick = function(event) {
+        event = event || window.event;
+        var target = event.target || event.srcElement,
+          link = target.src ? target.parentNode : target,
+          options = { index: link, event: event },
+          links = this.getElementsByTagName("a");
+        blueimp.Gallery(links, options);
+      };
+    </script>
+    <!-- Gallery -->
+    <script>
+      blueimp.Gallery(
+        document.getElementById("links").getElementsByTagName("a"),
+        {
+          container: "#blueimp-gallery-carousel",
+          carousel: true
+        }
+      );
+    </script>
+  </body>
+</html>

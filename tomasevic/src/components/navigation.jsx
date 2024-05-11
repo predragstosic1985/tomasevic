@@ -27,7 +27,7 @@ export const Navigation = (props) => {
           id="bs-example-navbar-collapse-1"
         >
           <ul className="nav navbar-nav navbar-right">
-            <li>
+            {/* <li>
               <a href="#features" className="page-scroll">
                 Naslovna
               </a>
@@ -46,7 +46,7 @@ export const Navigation = (props) => {
               <a href="#portfolio" className="page-scroll">
                 Galerija
               </a>
-            </li>
+            </li> */}
             {/* <li>
               <a href="#testimonials" className="page-scroll">
                 Testimonials
@@ -57,11 +57,11 @@ export const Navigation = (props) => {
                 Team
               </a>
             </li> */}
-            <li>
+            {/* <li>
               <a href="#contact" className="page-scroll">
                 Kontakt
               </a>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
