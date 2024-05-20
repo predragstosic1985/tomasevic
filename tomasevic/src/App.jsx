@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Navigation } from "./components/navigation";
 import { Header } from "./components/header";
-// import { Features } from "./components/features";
 import { About } from "./components/about";
-import { Services } from "./components/services";
-import { Gallery } from "./components/gallery";
-// import { Testimonials } from "./components/testimonials";
-// import { Team } from "./components/Team";
 import { Contact } from "./components/contact";
 import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
 import "./App.css";
-import ContactForm from "./components/contactForm";
-import { Counter } from "./components/counter";
+import Parallax from "./components/parallax ";
+import Gallery from "./components/gallery";
+// import { Features } from "./components/features";
+// import { Services } from "./components/services";
+// import { Testimonials } from "./components/testimonials";
+// import { Team } from "./components/Team";
+// import ContactForm from "./components/contactForm";
+// import { Counter } from "./components/counter";
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
@@ -28,16 +29,23 @@ const App = () => {
   return (
     <div>
       <Navigation />
-      <Counter />
-      {/* <Header data={landingPageData.Header} /> */}
+      {/* <Counter /> */}
+      <Header data={landingPageData.Header} />
+      <About data={landingPageData.About} />
+      <Gallery />
+      <Parallax>
+        {/* <h1>PETROVAC</h1>
+        <p>Dodjite da uživamo zajedno!</p> */}
+      </Parallax>
+      <Contact data={landingPageData.Contact} />
+
+      {/* ODAVDE NE */}
       {/* <Features data={landingPageData.Features} /> */}
-      {/* <About data={landingPageData.About} /> */}
       {/* <Services data={landingPageData.Services} />
-      <Gallery data={landingPageData.Gallery} />
+      />
       <ContactForm /> */}
       {/* <Testimonials data={landingPageData.Testimonials} />
       <Team data={landingPageData.Team} /> */}
-      {/* <Contact data={landingPageData.Contact} /> */}
     </div>
   );
 };

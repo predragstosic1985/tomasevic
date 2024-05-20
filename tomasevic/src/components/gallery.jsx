@@ -1,36 +1,22 @@
-import { Image } from "./image";
-import React from "react";
+import React, { useState } from 'react';
 
-export const Gallery = (props) => {
+import styles from './style/gallery.module.css';
+import GalleryModal from './galleryModal';
+
+const Gallery = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
-    <div id="portfolio" className="text-center">
-      <div className="container">
-        <div className="section-title">
-          <h2>Gallery</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed
-            dapibus leonec.
-          </p>
-        </div>
-        <div className="row">
-          <div className="portfolio-items">
-            {props.data
-              ? props.data.map((d, i) => (
-                  <div
-                    key={`${d.title}-${i}`}
-                    className="col-sm-6 col-md-4 col-lg-4"
-                  >
-                    <Image
-                      title={d.title}
-                      largeImage={d.largeImage}
-                      smallImage={d.smallImage}
-                    />
-                  </div>
-                ))
-              : "Loading..."}
-          </div>
-        </div>
-      </div>
+    <div className={styles.gallery}>
+      <h1>Kliknite na dugme ispod i pogledajte nas smestaj i okolinu</h1>
+      <button onClick={openModal} className={styles.openButton}>Galerija slika</button>
+      {isModalOpen && <GalleryModal isOpen={isModalOpen} onRequestClose={closeModal} />}
     </div>
   );
 };
+
+export default Gallery;
+

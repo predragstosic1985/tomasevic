@@ -137,12 +137,10 @@
     }
   ],
   "Contact": {
-    "address": "4321 California St, San Francisco, CA 12345 ",
-    "phone": "+1 123 456 1234",
+    "address": "Ulica XV br.42 Petrovac na moru, Crna Gora",
+    "phone": "+38267313880",
     "email": "info@company.com",
-    "facebook": "fb.com",
-    "twitter": "twitter.com",
-    "youtube": "youtube.com"
+    "facebook": "https://www.instagram.com/tomasevic_smestaj/?hl=sr"
   },
   "Features": [
     {

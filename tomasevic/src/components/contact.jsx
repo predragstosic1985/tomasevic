@@ -1,6 +1,7 @@
 import { useState } from "react";
 import emailjs from "emailjs-com";
 import React from "react";
+import style from "./style/contact.module.css"
 
 const initialState = {
   name: "",
@@ -44,7 +45,7 @@ export const Contact = (props) => {
               <div className="section-title">
                 <h2>KONTAKT</h2>
               </div>
-              <form name="sentMessage" validate onSubmit={handleSubmit}>
+              {/* <form name="sentMessage" validate onSubmit={handleSubmit}>
                 <div className="row">
                   <div className="col-md-6">
                     <div className="form-group">
@@ -91,15 +92,22 @@ export const Contact = (props) => {
                 <button type="submit" className="btn btn-custom btn-lg">
                   Send Message
                 </button>
-              </form>
+              </form> */}
+              <div className={style.iframeContainer}>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d310.6512115118475!2d18.948416401009883!3d42.205273893867314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf5762750c22600a2!2sSmestaj+Tomasevic!5e0!3m2!1ssr!2srs!4v1561997535049!5m2!1ssr!2srs"
+                  className={Contact.iframe}
+                  title="Example iFrame"
+                ></iframe>
+              </div>
             </div>
           </div>
           <div className="col-md-3 col-md-offset-1 contact-info">
             <div className="contact-item">
-              <h3>Contact Info</h3>
+              <h3>Kontakt</h3>
               <p>
                 <span>
-                  <i className="fa fa-map-marker"></i> Address
+                  <i className="fa fa-map-marker"></i> Adresa
                 </span>
                 {props.data ? props.data.address : "loading"}
               </p>
@@ -107,7 +115,7 @@ export const Contact = (props) => {
             <div className="contact-item">
               <p>
                 <span>
-                  <i className="fa fa-phone"></i> Phone
+                  <i className="fa fa-phone"></i> Telefon
                 </span>{" "}
                 {props.data ? props.data.phone : "loading"}
               </p>
@@ -117,7 +125,7 @@ export const Contact = (props) => {
                 <span>
                   <i className="fa fa-envelope-o"></i> Email
                 </span>{" "}
-                {props.data ? props.data.email : "loading"}
+                <a href="mailto:marko.tomasevic1@gmail.com" style={{ color: 'white' }}>marko.tomasevic1@gmail.com</a>
               </p>
             </div>
           </div>
@@ -126,18 +134,8 @@ export const Contact = (props) => {
               <div className="social">
                 <ul>
                   <li>
-                    <a href={props.data ? props.data.facebook : "/"}>
-                      <i className="fa fa-facebook"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href={props.data ? props.data.twitter : "/"}>
-                      <i className="fa fa-twitter"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href={props.data ? props.data.youtube : "/"}>
-                      <i className="fa fa-youtube"></i>
+                    <a href={props.data ? props.data.facebook : "/"} target="_blank">
+                      <i className="fa fa-instagram"></i>
                     </a>
                   </li>
                 </ul>
@@ -149,13 +147,10 @@ export const Contact = (props) => {
       <div id="footer">
         <div className="container text-center">
           <p>
-            &copy; 2023 Issaaf Kattan React Land Page Template. Design by{" "}
-            <a href="http://www.templatewire.com" rel="nofollow">
-              TemplateWire
-            </a>
+            &copy; 2024 Design by predragstosic@gmail.com
           </p>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
